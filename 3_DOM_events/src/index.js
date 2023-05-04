@@ -38,7 +38,12 @@ const userInfo2 = {
   project2title: "Scuber",
   project2description:
     "A burgeoning startup helping busy parents transport their children to and from all of their activities on scooters.",
-}
+};
+
+// We can use . or brackets in order to get different keys from the data
+//// We can iterate through this using a for loop!
+
+// We can nest within the object as we've seen before!
 
 // Now let us start grabbing specific data from that
 const friendArray = userInfo2["friend"]

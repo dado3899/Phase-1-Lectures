@@ -13,7 +13,7 @@
 ## Deliverables 
 
 - Demo JSON server
-    - Explore JSON-server and fire up the server in the src directory with json-server –watch db.json
+    - Explore JSON-server and fire up the server in the src directory with json-server –-watch db.json
 - Demo GET all
     - Make a fetch request to /books. 
     - Review the promises object

@@ -205,7 +205,7 @@ bookStore.inventory.forEach((book)=>{
   booklist.append(li)
   
 
-})
+// use a forEach to iterate over BookStore inventory.
 // create li, an h3 tag, 2 p tags, and image tag.
 // Add the cardData content to the tags.
 // Append all elements to our li

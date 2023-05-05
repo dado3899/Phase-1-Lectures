@@ -1,6 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Basic Get request
-  // More in depth 
+  // Basic Get request (Read)
+  fetch('http://localhost:3000/books')
+  .then((r)=> r.json())
+  .then((books)=> {
+    books.forEach((book) => addBook(book))
+  })
+
+  fetch('http://localhost:3000/stores/2')
+  .then((r)=>r.json())
+  .then((store)=>{
+    renderHeader(store)
+    renderFooter(store)
+  })
+  
+  // const data2 = fetch('http://localhost:3000/users')
+  
+  // .then(r=>r.json())
+  // .then(data=>console.log(data))
+  // More in depth in async!
+  // Post
+  function postBook(book){
+    fetch('http://localhost:3000/books',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(book)
+    })
+    .then((r)=>r.json())
+    .then((newBook)=>addBook(newBook))
+  }
+  // Delete
+  function deleteBook(book){
+    fetch(`http://localhost:3000/books/${book.id}`, {method: "DELETE"})
+  }
+  // Patch
+  fetch('http://localhost:3000/books/2',{
+    method: 'PATCH',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({
+      author: "Jon HG Duckett",
+      price: 1,
+      reviews: [
+        {
+          "userID": 15,
+          "content": "good way to learn JQuery"
+        },
+        {
+          "userID": 10,
+          "content": "Like the name change"
+        },
+      ],
+    })
+  })
+
   // Yesterdays:
   // Renders Header
   function renderHeader(store){
@@ -15,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   //Add a book
   function addBook(book){
-    console.log(book.inventory+1)
+    console.log(book)
     const li = document.createElement("li")
     const title = document.createElement("h3")
     const author = document.createElement("p")
@@ -36,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     button.addEventListener('click',()=> {
       li.remove()
+      deleteBook(book)
     })
     document.querySelector("#book-list").append(li)
   }
@@ -53,6 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
       reviews: []
     }
     console.log(newBook)
-    addBook(newBook)
+    postBook(newBook)
   })
 })

@@ -29,12 +29,16 @@
     {
       "id": 2,
       "title": "JavaScript & JQuery: Interactive Front-End Web Development",
-      "author": "Jon Duckett",
-      "price": 45.75,
+      "author": "Jon HG Duckett",
+      "price": 1,
       "reviews": [
         {
           "userID": 15,
           "content": "good way to learn JQuery"
+        },
+        {
+          "userID": 10,
+          "content": "Like the name change"
         }
       ],
       "inventory": 2,
@@ -130,27 +134,11 @@
       "inventory": "1",
       "reviews": [],
       "id": 8
-    },
-    {
-      "title": "abhsdjofb",
-      "author": "asdhjfklb",
-      "price": "1",
-      "imageUrl": "hafobd",
-      "inventory": "5",
-      "reviews": [],
-      "id": 9
-    },
-    {
-      "title": "1",
-      "author": "1",
-      "price": 1,
-      "imageUrl": "11",
-      "inventory": 1,
-      "reviews": [],
-      "id": 10
     }
   ],
-  "bs": [
-    "Hello"
+  "users": [
+    {
+      "username": "users"
+    }
   ]
 }

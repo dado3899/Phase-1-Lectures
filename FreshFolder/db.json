@@ -1,0 +1,46 @@
+{
+    "workspaces":{
+        "taskLister":[
+            {
+                "title": "Sort func",
+                "tasks":[
+                    "add priority changer",
+                    "add sort btn to lists",
+                    "assign priority with class when making tasks",
+                    "^^ assign background based on class (css)",
+                    "^^ iterate through tasks 3 times pushing to a new arr based on class",
+                    "^^ reload the tasks with new arr"
+                ]
+            },
+            {
+                "title": "Save func",
+                "tasks":[
+                    "add save btn to lists",
+                    "^^ save list title",
+                    "^^ save each task to an array",
+                    "^^ save the id",
+                    "^^ push the variables to an obj",
+                    "^^ patch the obj to json"
+                ]
+            },
+            {
+                "title": "Load func",
+                "tasks":[
+                    "get saved lists",
+                    "create a list div for each",
+                    "^^ load the title to h2",
+                    "^^ load each task to a li",
+                    "^^ set div id to obj id"
+                ]
+            },
+            {
+                "title": "Workspace func",
+                "tasks":[
+                    "add workspace namer",
+                    "add save func for workspace",
+                    "add color picker for workspaces"
+                ]
+            }
+        ]
+    }
+}

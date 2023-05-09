@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
     })
   })
-
+  
   // Yesterdays:
   // Renders Header
   function renderHeader(store){

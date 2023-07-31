@@ -70,29 +70,138 @@ const inventory = [
 ]
 
 // Pre Work Questions?
-
-
+// const x = "Hello"
+// console.log(x)
 // Function Declaration!
-
+function firstFunction(){
+    console.log("WE ARE IN A FUNCTION")
+    console.log("YIPEEE")
+}
 // Now lets call the function
+firstFunction()
 
+function secondFunction(data){
+    console.log(data)
+}
+secondFunction("This is a piece of data2")
+secondFunction(10)
 // Lets make a function with a parameter
+function addNumbers(num1,num2){
+    return num1+num2
+}
+const nums = addNumbers(3,5)
+console.log(nums)
 // Using the data above what sort of function can we create?
 
 // Anonomous Functions? Another way to write functions!
+console.log(
+    function(){
+        console.log("Hello")
+        return "Anonomous"
+    }()
+)
+
 // Whats the difference? It comes down to where it is called
 
 
 // Arrow Functions
 // Arrow functions vs regular functions vs anonomous functions????
-// Lets refactor the regular function above to be an arrow function!
 
-// Now you try it!
+const arrowFunc = (variable)=>{
+    console.log("Hello Arrow")
+    console.log(variable)
+}
+arrowFunc()
+// Lets refactor the regular function above to be an arrow function!
+belowTest()
+
+function belowTest(){
+    console.log("We are below")
+}
 
 // Scoping
 // Global Scope
+// console.log(inventory)
 // Function Scope
-// Block Scope (If, else, for, while)
+let x
+function scopeTesting(){
+    const functionScopeVar = "We are in an function"
+    console.log(inventory)
+    let changingVar 
+    x=190
+    if(true){
+        console.log(functionScopeVar)
+        const ifScope = "We are in an If"
+        changingVar = 5
+        function testAccess(){
+            console.log(ifScope)
+        }
+        testAccess()
+    }
+    console.log(changingVar)
+    return functionScopeVar
+}
 
+console.log("This is ", x)
+const functionScopeVar = scopeTesting()
+console.log(functionScopeVar)
+console.log(x)
+console.log(`This is ${functionScopeVar+"ADDING TO THE END"} with string interpolation`)
+console.log("This is ${functionScopeVar+ADDING TO THE END} with string interpolation")
+// Block Scope (If, else, for, while)
+let ifStatement = 10
+
+if(ifStatement > 0){
+    console.log("IN IF")
+}
+else if(ifStatement === -10){
+    console.log("IN ELSE IF")
+}
+else if(ifStatement < 0){
+    console.log("IN ELSE IF 2")
+}
+else{
+    console.log("IN ELSE")
+}
+
+while(ifStatement > 0){
+    // ifStatement = ifStatement - 1
+    console.log("Countdown ", ifStatement)
+    ifStatement -= 1
+}
+const arrayExample = ["First Number","Second number",2,3,4,5,"String", "SOMETHING"]
+for(let x=0; x < inventory.length; x++){
+    console.log(inventory[x])
+}
+
+const mapTest = inventory.map((item)=>{
+    console.log(item)
+    return(item.title)
+})
+const itemCall = "id"
+inventory.forEach((item)=>{
+    console.log(item[itemCall])
+    return(x.title)
+})
+
+console.log(mapTest)
+// console.log(forEach)
+console.log(inventory[1]["reviews"][0])
 // Callback Functions, calling a function in a function
 
+function outerFunction(innerFunction){
+    console.log("outerFunction")
+    console.log(innerFunction)
+}
+
+function bob(){
+    console.log("Inner Function")
+}
+function tim(){
+    console.log("In tim")
+    return 202
+}
+outerFunction(bob)
+outerFunction(tim())
+outerFunction(()=>{console.log("INNER ARROW FUNCTION")})
+console.log(tim)

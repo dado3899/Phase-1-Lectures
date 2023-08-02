@@ -74,3 +74,11 @@ const bookStore = {
         }
     ]
   }
+
+  
+console.log("IN DATA")
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log(userInfo)
+    console.log("IN DATA DOM CONTENT LOADED")
+  })

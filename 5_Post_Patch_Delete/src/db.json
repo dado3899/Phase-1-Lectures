@@ -27,23 +27,9 @@
   ],
   "books": [
     {
-      "id": 2,
-      "title": "JavaScript & JQuery: Interactive Front-End Web Development",
-      "author": "Jon Duckett",
-      "price": 45.75,
-      "reviews": [
-        {
-          "userID": 15,
-          "content": "good way to learn JQuery"
-        }
-      ],
-      "inventory": 2,
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/31SRWF+LkKL._SX398_BO1,204,203,200_.jpg"
-    },
-    {
       "id": 3,
-      "title": "JavaScript: The Good Parts",
-      "author": "Douglas Crockford",
+      "title": "Javascript: The Good Parts",
+      "author": "NEW AUTHOr",
       "price": 36,
       "reviews": [
         {
@@ -56,11 +42,12 @@
         }
       ],
       "inventory": 8,
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "NOT_EXISTANT": "NEW KEY"
     },
     {
       "id": 4,
-      "title": "JavaScript: The Definitive Guide",
+      "title": "Javascript The Definitive Guide",
       "author": "David Flanagan",
       "price": 25.5,
       "reviews": [
@@ -78,7 +65,7 @@
     },
     {
       "id": 5,
-      "title": "You Don’t Know JS",
+      "title": "NEW TITLE",
       "author": "Kyle Simpson",
       "price": 6,
       "reviews": [
@@ -121,36 +108,7 @@
       ],
       "inventory": 20,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SY344_BO1,204,203,200_.jpg"
-    },
-    {
-      "title": "Lord of the Rings",
-      "author": "Jrr Tolkein",
-      "price": "1",
-      "imageUrl": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
-      "inventory": "1",
-      "reviews": [],
-      "id": 8
-    },
-    {
-      "title": "abhsdjofb",
-      "author": "asdhjfklb",
-      "price": "1",
-      "imageUrl": "hafobd",
-      "inventory": "5",
-      "reviews": [],
-      "id": 9
-    },
-    {
-      "title": "1",
-      "author": "1",
-      "price": 1,
-      "imageUrl": "11",
-      "inventory": 1,
-      "reviews": [],
-      "id": 10
     }
   ],
-  "bs": [
-    "Hello"
-  ]
+  "newRoute": []
 }

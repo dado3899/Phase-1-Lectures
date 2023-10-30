@@ -56,14 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch("http://localhost:3000/randomDogSaved",{
       method: "POST",
       headers: {
-        "Content-Type":"Application/json"
+        "Content-Type":"Application/json",
+        "Authorization": "Bearer "
       },
       body: JSON.stringify(data)
     })
   })
-  const key = "c82d5efadbe37e6a719e4c9825b64b6b"
+  
   //Fetch from weather api
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=39.7392&lon=-104.9903&appid=${key}`)
   .then(r=>r.json())
   .then(data=>console.log(data))
+
+
 })

@@ -65,6 +65,46 @@
       "message": "https://images.dog.ceo/breeds/waterdog-spanish/20180723_185544.jpg",
       "status": "success",
       "id": 12
+    },
+    {
+      "message": "https://images.dog.ceo/breeds/chow/n02112137_16665.jpg",
+      "status": "success",
+      "id": 13
+    },
+    {
+      "message": "https://images.dog.ceo/breeds/dane-great/n02109047_25291.jpg",
+      "status": "success",
+      "id": 14
+    },
+    {
+      "message": "https://images.dog.ceo/breeds/affenpinscher/n02110627_10787.jpg",
+      "status": "success",
+      "id": 15
+    },
+    {
+      "message": "https://images.dog.ceo/breeds/entlebucher/n02108000_522.jpg",
+      "status": "success",
+      "id": 16
+    },
+    {
+      "message": "https://images.dog.ceo/breeds/chow/n02112137_3237.jpg",
+      "status": "success",
+      "id": 17
+    },
+    {
+      "message": "https://images.dog.ceo/breeds/bulldog-french/n02108915_481.jpg",
+      "status": "success",
+      "id": 18
+    },
+    {
+      "message": "https://images.dog.ceo/breeds/greyhound-italian/n02091032_6979.jpg",
+      "status": "success",
+      "id": 19
+    },
+    {
+      "message": "https://images.dog.ceo/breeds/springer-english/n02102040_2743.jpg",
+      "status": "success",
+      "id": 20
     }
   ]
 }

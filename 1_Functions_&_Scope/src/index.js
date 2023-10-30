@@ -71,7 +71,6 @@ const inventory = [
 
 // Pre Work Questions?
 
-
 // Function Declaration!
 
 // Now lets call the function

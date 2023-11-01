@@ -109,7 +109,8 @@ console.log(popped_item)
 // console.log(array_nums)
 // console.log(spliced)
 //slice returns the above but keeps the the original
-const sliced = array_nums.slice(2,6)
+// console.log( .length)
+const sliced = array_nums.slice(0,2)
 console.log(array_nums)
 console.log(sliced)
 

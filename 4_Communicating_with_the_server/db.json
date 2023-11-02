@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "David"
+    },
+    {
+      "name": "Sam",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Css 101",
+      "content": "jk css sucks"
+    },
+    {
+      "id": 2,
+      "title": "python 101",
+      "content": "python makes my head hurt"
+    },
+    {
+      "title": "New Post",
+      "content": "Some stuff here",
+      "id": 3
+    },
+    {
+      "title": "New Post",
+      "content": "Some stuff here",
+      "id": 4
+    }
+  ]
+}

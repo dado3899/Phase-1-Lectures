@@ -1,114 +1,126 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Basic Get request (Read)
-  fetch('http://localhost:3000/books')
-  .then((r)=> r.json())
-  .then((books)=> {
-    books.forEach((book) => addBook(book))
+  // To start off let us start the json server and test the routes in our web browser
+
+  // Basic Get Request
+  // fetch(url)
+  // .then((r)=>r.json())
+  // .then((data)=> )
+  // .catch(e => console.log(e))
+  fetch("http://localhost:3000/stores/3")
+  .then(r =>  r.json())
+  .then(data => {
+    console.log(data)
+    renderHeader(data)
   })
 
-  fetch('http://localhost:3000/stores/2')
-  .then((r)=>r.json())
-  .then((store)=>{
-    renderHeader(store)
-    renderFooter(store)
+  fetch("http://localhost:3000/books")
+  .then(r => r.json())
+  .then(books => {
+    console.log(books)
+    books.forEach((book)=>{
+      createBookCard(book)
+    })
   })
+
   
-  // const data2 = fetch('http://localhost:3000/users')
   
-  // .then(r=>r.json())
-  // .then(data=>console.log(data))
-  // More in depth in async!
-  // Post
-  function postBook(book){
-    fetch('http://localhost:3000/books',{
-      method: 'POST',
+  const form = document.querySelector("#book-form")
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    const new_obj = {
+      title: e.target['form-title'].value,
+      author: e.target.author.value,
+      price: parseFloat(document.querySelector("#form-price").value),
+      imageUrl: e.target.imageUrl.value,
+      inventory: parseInt(e.target.inventory.value)
+    }
+    fetch("http://localhost:3000/books", {
+      method: "POST",
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(book)
+      body: JSON.stringify(new_obj)
     })
-    .then((r)=>r.json())
-    .then((newBook)=>addBook(newBook))
-  }
-  // Delete
-  function deleteBook(book){
-    fetch(`http://localhost:3000/books/${book.id}`, {method: "DELETE"})
-  }
-  // Patch
-  fetch('http://localhost:3000/books/2',{
-    method: 'PATCH',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body:JSON.stringify({
-      author: "Jon HG Duckett",
-      price: 1,
-      reviews: [
-        {
-          "userID": 15,
-          "content": "good way to learn JQuery"
-        },
-        {
-          "userID": 10,
-          "content": "good way to learn JQuery"
-        },
-      ],
-    })
+    .then(r=>r.json())
+    .then(new_book=>createBookCard(new_book))
+    //UPDATE FRONTEND
+    // (new_obj)
+    //UPDATE BACKEND
   })
+
+
+  // We can fetch either all the data or just one!
+
+  // Now lets refactor what we had yesterday to be more dynamic!
+  // We can use store to render the header and footer!
 
   // Yesterdays:
   // Renders Header
-  function renderHeader(store){
-    document.querySelector('h1').textContent = store.name;
+  function renderHeader(bookStore){
+    document.querySelector('h1').textContent = bookStore.name;
   }
+
   // Renders Footer
-  function renderFooter(store){
+  function renderFooter(){
     const footerDivs = document.querySelectorAll('footer div');
-    footerDivs[0].textContent = store.name;
-    footerDivs[1].textContent = store.address;
-    footerDivs[2].textContent = store.hours;
+    footerDivs[0].textContent = bookStore.name;
+    footerDivs[1].textContent = bookStore.address;
+    footerDivs[2].textContent = bookStore.hours;
   }
-  //Add a book
-  function addBook(book){
-    console.log(book)
-    const li = document.createElement("li")
+
+  function createBookCard(book){
+    const li = document.createElement('li')
     const title = document.createElement("h3")
     const author = document.createElement("p")
     const price = document.createElement("p")
-    const img = document.createElement("img")
-    const button = document.createElement("button")
+    const image = document.createElement("img")
+    const del = document.createElement("button")
+    del.textContent = "Delete"
     title.textContent = book.title
     author.textContent = book.author
-    price.textContent = book.textContent
-    img.src = book.imageUrl
-    button.textContent = "Delete"
-    li.className = "List-Element"
-    li.append(title,author,price,img, button)
-    book.reviews.forEach((review)=> {
-      const newReview = document.createElement("p")
-      newReview.textContent = review.conten
-      li.append(newReview)
-    })
-    button.addEventListener('click',()=> {
-      li.remove()
-      deleteBook(book)
-    })
-    document.querySelector("#book-list").append(li)
-  }
+    price.textContent = book.price
+    image.src = book.imageUrl
 
-  // Book Form Event 
-  const form = document.querySelector("#book-form")
-  form.addEventListener('submit', (event)=> {
-    event.preventDefault()
-    const newBook = {
-      title: event.target.title.value,
-      author: event.target.author.value,
-      price: parseInt(event.target.price.value),
-      imageUrl: event.target.imageUrl.value,
-      inventory: parseInt(event.target.inventory.value),
-      reviews: []
+
+    li.append(title,author,price,image, del)
+    document.querySelector("#book-list").append(li)
+
+    price.addEventListener('click',()=>{
+        const new_price = parseInt(price.textContent) + 1
+        
+        price.textContent = new_price
+        fetch(`http://localhost:3000/books/${book.id}`,{
+          method: "PATCH",
+          headers:{
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            price: new_price
+          })
+        })
+        
+      })
+
+    del.addEventListener('click',()=>{
+        li.remove()
+        // fetch delete
+        console.log(book.id)
+        fetch(`http://localhost:3000/books/${book.id}`,{
+          method: "DELETE"
+        })
+    })
+    // li.addEventListener('click',()=>{
+    //     if(image.src === book.imageUrl){
+    //     image.src = ""
+    //     }
+    //     else{
+    //     image.src = book.imageUrl
+    //     }
+    // })
     }
-    console.log(newBook)
-    postBook(newBook)
-  })
+
+  // Lets take the logic of yesterdays card data rendering as well!
+
+  // Now instead of calling bookData let us fetch from the database
+
 })

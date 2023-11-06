@@ -138,7 +138,9 @@
   ],
   "users": [
     {
-      "username": "users"
+      "id": 1,
+      "username": "CHANGED",
+      "extra": "Extraval"
     }
   ]
 }

@@ -1,5 +1,6 @@
 ### Lecture Topics
 
+
 - Declaring vs. Invoking JS functions
 - Block Scope
 - Function Scope

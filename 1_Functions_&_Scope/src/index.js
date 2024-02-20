@@ -135,7 +135,33 @@ const arrow = ()=>{
 
 // Scoping
 // Global Scope
-// Function Scope
-// Block Scope (If, else, for, while)
-
+const glob = "In global"
+console.log(glob)
+function consoleGlob(){
+    console.log(glob)
+    // Function Scope
+    const func = "In function"
+    console.log(func)
+    // Block Scope (If, else, for, while)
+    if(true){
+        const block = "In block"
+        console.log(block)
+    }
+    return func
+}
+// const func = consoleGlob()
+// console.log(func)
+const block = "Above block"
+if(true){
+    const block = "In block"
+    console.log(block)
+}
 // Callback Functions, calling a function in a function
+// const callback = "string"
+function callback(newfunction){
+    console.log(newfunction)
+    newfunction()
+}
+
+callback(consoleGlob)
+callback(whatever)

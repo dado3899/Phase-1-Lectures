@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   .then(r => r.json())
   .then(data => console.log(data))
   //Fetch from weather api
-  const apiKey = "c82d5efadbe37e6a719e4c9825b64b6b"
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=39.7392&lon=104.9903&appid=${apiKey}`)
   .then(r=>r.json())
   .then(data=>{

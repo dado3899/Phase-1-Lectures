@@ -31,30 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((newBook)=>addBook(newBook))
   }
   // Delete
-  function deleteBook(book){
-    fetch(`http://localhost:3000/books/${book.id}`, {method: "DELETE"})
-  }
   // Patch
-  fetch('http://localhost:3000/books/2',{
-    method: 'PATCH',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body:JSON.stringify({
-      author: "Jon HG Duckett",
-      price: 1,
-      reviews: [
-        {
-          "userID": 15,
-          "content": "good way to learn JQuery"
-        },
-        {
-          "userID": 10,
-          "content": "good way to learn JQuery"
-        },
-      ],
-    })
-  })
 
   // Yesterdays:
   // Renders Header

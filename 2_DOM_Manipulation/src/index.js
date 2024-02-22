@@ -58,7 +58,8 @@ fruits.forEach((fruit)=>{
 })
 //map
 const mapVar = fruits.map((fruit)=>{
-    return 1
+    console.log(fruit)
+    // return 1
     // if (fruit === "ADDED"){
     //     return "Peach"
     // }

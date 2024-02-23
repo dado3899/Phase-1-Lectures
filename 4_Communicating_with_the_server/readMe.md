@@ -13,7 +13,8 @@
 ## Deliverables 
 
 - Demo JSON server
-    - Explore JSON-server and fire up the server in the src directory with json-server –watch db.json
+    - Explore JSON-server and fire up the server in the src directory with json-server –-watch db.json
+    - To install it globally use npm install -g json-server
 - Demo GET all
     - Make a fetch request to /books. 
     - Review the promises object

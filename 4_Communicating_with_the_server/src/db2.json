@@ -1,0 +1,25 @@
+{
+    "animals": [
+        {
+            "id": 5,
+            "species": "Zebra",
+            "name": "Morty"
+        },
+        {
+            "id": 2,
+            "species": "Kangaroo",
+            "name": "Jack"
+        }
+    ],
+    "zoos": [
+        {
+            "id": 1,
+            "name": "Den Zoo",
+            "size": "Big"
+        },
+        {
+
+        }
+    ],
+    "cities": [{},{}]
+}

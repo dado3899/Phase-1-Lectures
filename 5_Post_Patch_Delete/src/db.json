@@ -121,36 +121,6 @@
       ],
       "inventory": 20,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SY344_BO1,204,203,200_.jpg"
-    },
-    {
-      "title": "Lord of the Rings",
-      "author": "Jrr Tolkein",
-      "price": "1",
-      "imageUrl": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
-      "inventory": "1",
-      "reviews": [],
-      "id": 8
-    },
-    {
-      "title": "abhsdjofb",
-      "author": "asdhjfklb",
-      "price": "1",
-      "imageUrl": "hafobd",
-      "inventory": "5",
-      "reviews": [],
-      "id": 9
-    },
-    {
-      "title": "1",
-      "author": "1",
-      "price": 1,
-      "imageUrl": "11",
-      "inventory": 1,
-      "reviews": [],
-      "id": 10
     }
-  ],
-  "bs": [
-    "Hello"
   ]
 }

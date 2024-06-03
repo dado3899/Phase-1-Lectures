@@ -71,27 +71,110 @@ const inventory = [
 
 // Pre Work Questions?
 
-
 // Function Declaration!
+const day = "Monday"
+// day = "Saturday"
+const x = 25
+
+let day2 = "Tuesday"
+day2 = "Saturday"
+// console.log(day2)
+
+
+function sayHi(){
+    console.log("Hello")
+}
+
 
 // Now lets call the function
+// sayHi()
 
 // Lets make a function with a parameter
+function sayHelloUser(username){
+    console.log("Hello there ", username)
+}
+// sayHelloUser("David")
+// sayHelloUser("Jack")
+
+function addTwo(num1,num2){
+    const sum = num1+num2
+    return sum
+}
+const solution = addTwo(5,24)
+const solution2 = addTwo(solution,20)
+
+// console.log(inventory)
+
 // Using the data above what sort of function can we create?
+function showPrice(book){
+    console.log(book)
+}
+// showPrice(30)
 
 // Anonomous Functions? Another way to write functions!
+// function subtract(num1,num2){
+    //     return num1 - num2
+    // }
+const subtract = function(num1,num2){
+    return num1-num2
+}
+
+const sol = subtract(5,3)
+// console.log(sol)
+
 // Whats the difference? It comes down to where it is called
 
 
 // Arrow Functions
+function callOtherFunction(func){
+    console.log(func(50,3))
+}
+
+// callOtherFunction((num1,num2) => {return num1-num2})
+// callOtherFunction(addTwo)
 // Arrow functions vs regular functions vs anonomous functions????
 // Lets refactor the regular function above to be an arrow function!
 
 // Now you try it!
+// Try creating multiplyTwo and calling it in callOtherFunction
+function multTwo(num1,num2){
+    return num1 * num2
+}
+// callOtherFunction(multTwo)
 
 // Scoping
 // Global Scope
+console.log(inventory)
+const globalVar = "global"
 // Function Scope
+function scopeTesting(var1){
+    console.log(var1)
+    const funcScope = "Function"
+    console.log(x)
+    console.log(globalVar)
+    if (true){
+        const blockScope = "Block"
+        console.log(globalVar)
+        console.log(blockScope)
+        console.log(funcScope)
+    }
+    function nestedFunc(){
+        const nested = "Nested"
+        console.log("nested")
+        nestedAgain()
+        function nestedAgain(){
+            console.log(funcScope)
+            console.log("Nested squared")
+        }
+    }
+    nestedFunc()
+}
+scopeTesting("Testing Function Scope")
+console.log(x)
+// function scope2(){
+//     console.log(var1)
+// }
+// scope2()
 // Block Scope (If, else, for, while)
 
 // Callback Functions, calling a function in a function

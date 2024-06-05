@@ -203,3 +203,16 @@ bookStore.inventory.forEach((book)=>{
 // Add the cardData content to the tags.
 // Append all elements to our li
 // Append li to the DOM through the ul with the id of book-list
+
+const record = [{w:true,year:1990},{w:false,year:1990},{w:false,year:1990}]
+
+function superbowlWin(record){
+
+    record.find(superbowlWin2)
+}
+
+function superbowlWin2(x){
+    console.log(x)
+
+}
+superbowlWin(record)

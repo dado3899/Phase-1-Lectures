@@ -1,0 +1,24 @@
+{
+    "trails": [
+        {
+            "id":1,
+            "name": "Royal Arch",
+            "location": "Boulder",
+            "sub_trails":{}
+        },
+        {
+            "id":2,
+            "name": "Chitaqua",
+            "location": "Boulder",
+            "sub_trails":[
+                {}
+            ]
+        }
+    ],
+    "nationalParks": [
+        {
+            "id":1,
+            "name": "Yosemite"
+        }
+    ]
+}

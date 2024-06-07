@@ -38,6 +38,6 @@ const header = document.querySelector("h1")
 header.textContent = "THIS IS A HEADER"
 header.id = "Unique_id"
 
-const img = document.createElement("img")
-img.src = "https://cdn.britannica.com/70/234870-050-D4D024BB/Orange-colored-cat-yawns-displaying-teeth.jpg"
+// const img = document.createElement("img")
+// img.src = "https://cdn.britannica.com/70/234870-050-D4D024BB/Orange-colored-cat-yawns-displaying-teeth.jpg"
 headerDiv.append(img)

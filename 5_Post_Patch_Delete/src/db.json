@@ -42,7 +42,7 @@
     },
     {
       "id": 3,
-      "title": "JavaScript: The Good Parts",
+      "title": "JavaScript: The Bad Parts",
       "author": "Douglas Crockford",
       "price": 36,
       "reviews": [
@@ -78,13 +78,17 @@
     },
     {
       "id": 5,
-      "title": "You Don’t Know JS",
+      "title": "You Don’t Know JS (yet)",
       "author": "Kyle Simpson",
       "price": 6,
       "reviews": [
         {
           "userID": 76,
           "content": "You can find this for free online, no need to pay for it!"
+        },
+        {
+          "userID": 1000,
+          "content": "Needs more rinos"
         }
       ],
       "inventory": 7,
@@ -121,36 +125,6 @@
       ],
       "inventory": 20,
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41oYsXjLvZL._SY344_BO1,204,203,200_.jpg"
-    },
-    {
-      "title": "Lord of the Rings",
-      "author": "Jrr Tolkein",
-      "price": "1",
-      "imageUrl": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
-      "inventory": "1",
-      "reviews": [],
-      "id": 8
-    },
-    {
-      "title": "abhsdjofb",
-      "author": "asdhjfklb",
-      "price": "1",
-      "imageUrl": "hafobd",
-      "inventory": "5",
-      "reviews": [],
-      "id": 9
-    },
-    {
-      "title": "1",
-      "author": "1",
-      "price": 1,
-      "imageUrl": "11",
-      "inventory": 1,
-      "reviews": [],
-      "id": 10
     }
-  ],
-  "bs": [
-    "Hello"
   ]
 }

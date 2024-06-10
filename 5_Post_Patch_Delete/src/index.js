@@ -3,7 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('http://localhost:3000/books')
   .then((r)=> r.json())
   .then((books)=> {
+    const searchForm = document.createElement("form")
+    const search = document.createElement("input")
+    search.type = "text"
+    search.name = "search"
+    searchForm.append(search)
+    document.querySelector("#form-wrapper").append(searchForm)
+
+    searchForm.addEventListener("submit",(e)=>{
+      e.preventDefault()
+      const filteredBooks = books.filter((book)=>{
+        if(book.title.toLowerCase().includes(e.target.search.value.toLowerCase())){
+            return true
+        }
+        return false
+      })
+      document.querySelector("#book-list").innerHTML = ""
+      filteredBooks.forEach((book) => addBook(book))
+    })
+    
     books.forEach((book) => addBook(book))
+
   })
 
   fetch('http://localhost:3000/stores/2')
@@ -14,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   
   // const data2 = fetch('http://localhost:3000/users')
-  
   // .then(r=>r.json())
   // .then(data=>console.log(data))
   // More in depth in async!
@@ -31,32 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((newBook)=>addBook(newBook))
   }
   // Delete
-  function deleteBook(book){
-    fetch(`http://localhost:3000/books/${book.id}`, {method: "DELETE"})
+  function deleteBook(id,li){
+    console.log(id)
+    fetch(`http://localhost:3000/books/${id}`,{
+      method: "DELETE"
+    })
+    .then(r=>r.json())
+    .then(data=>{
+      li.remove()
+    })
+    .catch(data => {
+      alert("Sorry could not delete")
+    })
   }
   // Patch
-  fetch('http://localhost:3000/books/2',{
-    method: 'PATCH',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body:JSON.stringify({
-      author: "Jon HG Duckett",
-      price: 1,
-      reviews: [
-        {
-          "userID": 15,
-          "content": "good way to learn JQuery"
-        },
-        {
-          "userID": 10,
-          "content": "good way to learn JQuery"
-        },
-      ],
-    })
-  })
 
-  // Yesterdays:
+
   // Renders Header
   function renderHeader(store){
     document.querySelector('h1').textContent = store.name;
@@ -70,30 +79,70 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   //Add a book
   function addBook(book){
-    console.log(book)
+    // console.log(book)
     const li = document.createElement("li")
     const title = document.createElement("h3")
     const author = document.createElement("p")
     const price = document.createElement("p")
     const img = document.createElement("img")
-    const button = document.createElement("button")
+    const delButton = document.createElement("button")
+    const reviewHeader = document.createElement("h1")
+    const reviewWrapper = document.createElement("div")
+    book.reviews.map((review)=>{
+      const reviewElement = document.createElement("p")
+      reviewElement.textContent = review.content
+      reviewWrapper.append(reviewElement)
+    })
+    
+
+    const editForm = document.createElement("form")
+    const input1 = document.createElement("input")
+    input1.type = "text"
+    input1.name = "new_review"
+    input1.placeholder = "New Review"
+
     title.textContent = book.title
     author.textContent = book.author
     price.textContent = book.textContent
     img.src = book.imageUrl
-    button.textContent = "Delete"
     li.className = "List-Element"
-    li.append(title,author,price,img, button)
-    book.reviews.forEach((review)=> {
-      const newReview = document.createElement("p")
-      newReview.textContent = review.conten
-      li.append(newReview)
-    })
-    button.addEventListener('click',()=> {
-      li.remove()
-      deleteBook(book)
-    })
+    delButton.textContent = "Delete"
+    reviewHeader.textContent = "REVIEWS: "
+
+    editForm.append(input1)
+    li.append(title,author,price,img,delButton,reviewHeader,reviewWrapper,editForm)
+
     document.querySelector("#book-list").append(li)
+    delButton.addEventListener("click",()=>{
+      deleteBook(book.id,li)
+    })
+
+    editForm.addEventListener("submit",(e)=>{
+      e.preventDefault()
+      const newReview = {
+        "userID": 1000,
+        "content": e.target.new_review.value
+      }
+      book.reviews.push(newReview)
+      fetch(`http://localhost:3000/books/${book.id}`,{
+        method: "PATCH",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          reviews: book.reviews
+        })
+      })
+      .then(r=>r.json())
+      .then(data=>{
+        const reviewElement = document.createElement("p")
+        reviewElement.textContent = newReview.content
+        reviewWrapper.append(reviewElement)
+        // title.textContent =  e.target.new_title.value
+      })
+    })
+
+
   }
 
   // Book Form Event 
@@ -108,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
       inventory: parseInt(event.target.inventory.value),
       reviews: []
     }
-    console.log(newBook)
     postBook(newBook)
   })
 })

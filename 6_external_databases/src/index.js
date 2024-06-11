@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // so I can push
   //Fetch from https://dog.ceo/dog-api/
   fetch('https://dog.ceo/api/breeds/image/random')
   .then(r=>r.json())

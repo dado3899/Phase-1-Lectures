@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Basic Get request (Read)
   fetch('http://localhost:3000/books')
-  .then((r)=> r.json())
+  .then((r)=> console.log(r))
   .then((books)=> {
     const searchForm = document.createElement("form")
     const search = document.createElement("input")

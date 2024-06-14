@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   .then(r=>r.json())
   .then(dog =>{
     console.log(dog)
-    const booklist = document.querySelector("#book-list")
-    const image = document.createElement("img")
-    image.src = dog.message
-    booklist.append(image)
+    // const booklist = document.querySelector("#book-list")
+    // const image = document.createElement("img")
+    // image.src = dog.message
+    // booklist.append(image)
   })
   //Fetch from weather api
   fetch('https://api.breakingbadquotes.xyz/v1/quotes/100')
@@ -24,4 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
   .then(data=>{
     console.log(data)
   })
+
+  // const dropdown = document.querySelector("#cars")
+  // const newElement = document.createElement("option")
+  // newElement.value = "image"
+  // newElement.textContent = "Pose"
+  // dropdown.append(newElement)
+  // dropdown.addEventListener("change", (e)=>{
+  //   console.log(e.target.value)
+  // })
+  
 })
